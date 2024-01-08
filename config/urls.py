@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from rest_framework_nested import routers
 
 from api import views
 
-router = routers.SimpleRouter()
+router = DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'todos', views.TodoViewSet)
 router.register(r'posts', views.PostViewSet)
